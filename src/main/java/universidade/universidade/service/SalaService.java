@@ -11,9 +11,9 @@ import java.util.UUID;
 
 @Service
 public class SalaService {
-    @Autowired
+   @Autowired
     private SalaRepository repository;
-
+    /*
     public Sala criar(Sala obj){
         return repository.save(obj);
     }
@@ -21,7 +21,7 @@ public class SalaService {
     public void excluir(UUID id){
         repository.deleteById(id);
     }
-
+    */
     public Sala buscarPorId(UUID id){
         Optional<Sala> obj = repository.findById(id);
         return obj.get();
@@ -30,7 +30,7 @@ public class SalaService {
     public List<Sala> buscarTodos(){
         return repository.findAll();
     }
-
+    /*
     public Sala atualizar(Sala obj){
         Optional<Sala> newObj = repository.findById(obj.getId());
         atualizarSala(newObj, obj);
@@ -39,4 +39,6 @@ public class SalaService {
     private void atualizarSala(Optional<Sala> newObj, Sala obj){
         newObj.get().setDescricao(obj.getDescricao());
     }
+
+  */
 }

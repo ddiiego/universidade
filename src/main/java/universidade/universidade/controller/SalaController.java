@@ -13,9 +13,10 @@ import java.util.UUID;
 @RestController
 @RequestMapping(value = "/sala")
 public class SalaController {
+
     @Autowired
     private SalaService service;
-
+    /*
     @PostMapping
     public ResponseEntity<Sala> criar(@RequestBody Sala obj){
         return ResponseEntity.status(HttpStatus.CREATED).body(service.criar(obj));
@@ -26,7 +27,7 @@ public class SalaController {
         service.excluir(id);
         return ResponseEntity.noContent().build();
     }
-
+    */
     @GetMapping(value = "/{id}")
     public ResponseEntity<Sala> buscarPorId(@PathVariable UUID id){
         return ResponseEntity.ok().body(service.buscarPorId(id));
@@ -36,10 +37,11 @@ public class SalaController {
     public ResponseEntity<List<Sala>> bucarTodos(){
         return ResponseEntity.ok().body(service.buscarTodos());
     }
-
+    /*
     @PutMapping(value = "/{id}")
     public ResponseEntity<Sala> atualizar(@PathVariable UUID id, @RequestBody Sala obj){
         obj.setId(id);
         return ResponseEntity.ok().body(service.atualizar(obj));
     }
+    */
 }
