@@ -39,6 +39,9 @@ public class AgendamentoService {
         return repository.save(newObj.get());
     }
     private void atualizarAgendamento(Optional<Agendamento> newObj, Agendamento obj){
+        newObj.get().setData(obj.getData());
+        newObj.get().setTurno(obj.getTurno());
+        newObj.get().setHorario(obj.getHorario());
         newObj.get().setDescricao(obj.getDescricao());
         newObj.get().setSala(obj.getSala());
     }
